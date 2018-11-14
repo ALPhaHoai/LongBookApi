@@ -7,23 +7,23 @@ Chức năng
   - Người dùng
     + Xem danh sách truyện
 	+ Xem chi tiết nội dung từng truyện
-	+ Có thể tra cứu theo thể loại truyện
+	+ Duyệt danh sách truyện theo thể loại
 	
 Mô tả hệ thống
 1. Backend
-  + Xây dựng 1 Web Service để đổ dữ liệu về cho front-end 
+  + Xây dựng 1 Web Service để đổ dữ liệu về cho front-end
   + Cơ dữ liệu Mysql
   + Xây dựng API phục vụ cho người quản trị, và người dùng
 
 2. Front-end
   + Phần mềm quản trị
-    - Giao diện để quản lý thêm, sửa, xóa truyện
-	- Dùng java swing or trên web
+    - Trang web quản trị để quản lý thêm, sửa, xóa truyện
+
   + Người dùng cuối
-     - Giao diện để xem danh sách truyện
-	 - Có thể tìm kiếm thể loại truyện
+     - Android App xem danh sách truyện
+	 - Có thể tìm kiếm teo tên
+	 - Duyệt danh sách truyện theo thể loại
 	 - Xem chi tiết truyện
-	 - Có thể phát triển trên android hoặc java swing
  
  Yêu cầu
   + Dùng Jersey cho web service

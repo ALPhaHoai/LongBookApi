@@ -595,7 +595,7 @@ Mô tả hệ thống
 
 * **URL**
 
-  /book/{category_id}
+  /category/{category_id}
 
 * **Method:**
   

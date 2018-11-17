@@ -201,7 +201,12 @@ Mô tả hệ thống
 
 * **Sample Call:**
 
-   `POST` /book <br />
+   `POST` /book
+       
+       {
+            "title" : "Con cò",
+            "content" : "Con cò bay lả bay la"
+       }
 
 
 
@@ -268,7 +273,12 @@ Mô tả hệ thống
 
 * **Sample Call:**
 
-   `PUT` /book/1 <br />
+   `PUT` /book/1
+   
+        {
+            "title" : "Con cò",
+            "content" : "Con cò bay lả bay la"
+        }
 
 
 
@@ -441,7 +451,11 @@ Mô tả hệ thống
 
 * **Sample Call:**
 
-   `POST` /book/1/category <br />
+   `POST` /book/1/category
+   
+        {
+            "category_id" : 4
+        }
 
 ### 8. Delete all category of specified book
 
@@ -702,7 +716,11 @@ Mô tả hệ thống
 
 * **Sample Call:**
 
-   `POST` /category <br />
+   `POST` /category
+   
+        {
+            "name" : "Truyện cười"
+        }
 
 
 
@@ -760,7 +778,11 @@ Mô tả hệ thống
 
 * **Sample Call:**
 
-   `PUT` /category/1 <br />
+   `PUT` /category/1
+   
+         {
+            "name" : "Truyện cười"
+         }
 
 
 

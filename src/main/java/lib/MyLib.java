@@ -4,7 +4,6 @@ import com.mysql.cj.util.StringUtils;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 /**
@@ -31,28 +30,49 @@ public class MyLib {
         return "OK";
     }
 
-
-    public static Response echoSuccessMessage(String message) {
-        return Response.ok((new JSONObject()
-                .appendField("error", false)
-                .appendField("message", message)).toJSONString(), MediaType.APPLICATION_JSON).build();
-    }
-    public static Response echoSuccessMessage(JSONObject message) {
-        return Response.ok(message.toJSONString(), MediaType.APPLICATION_JSON).build();
-    }
-    public static Response echoSuccessMessage(JSONArray message) {
-        return Response.ok(message.toJSONString(), MediaType.APPLICATION_JSON).build();
-    }
-
     public static Response echoErrorMessage(String message) {
-        return echoErrorMessage(message, Response.Status.BAD_REQUEST);
+        return echoMessage(message, Response.Status.BAD_REQUEST);
     }
 
     public static Response echoErrorMessage(String message, Response.Status httpCode) {
+        return echoMessage(message, httpCode);
+    }
+
+    public static Response echoSuccessMessage(String message) {
+        return echoMessage(message, Response.Status.OK);
+    }
+
+    public static Response echoSuccessMessage(JSONArray result) {
+        return echoMessage(Response.Status.OK.toString(), result, Response.Status.OK);
+    }
+
+    public static Response echoSuccessMessage(JSONObject result) {
+        return echoMessage(Response.Status.OK.toString(), result, Response.Status.OK);
+    }
+
+    public static Response echoMessage(String message, Response.Status httpCode) {
         return Response.status(httpCode)
                 .entity((new JSONObject()
-                        .appendField("error", true)
+                        .appendField("status", httpCode.getStatusCode())
                         .appendField("message", message)).toJSONString())
+                .build();
+    }
+
+    public static Response echoMessage(String message, JSONObject result, Response.Status httpCode) {
+        return Response.status(httpCode)
+                .entity((new JSONObject()
+                        .appendField("status", httpCode.getStatusCode())
+                        .appendField("message", message)
+                        .appendField("result", result)).toJSONString())
+                .build();
+    }
+
+    public static Response echoMessage(String message, JSONArray result, Response.Status httpCode) {
+        return Response.status(httpCode)
+                .entity((new JSONObject()
+                        .appendField("status", httpCode.getStatusCode())
+                        .appendField("message", message)
+                        .appendField("result", result)).toJSONString())
                 .build();
     }
 }

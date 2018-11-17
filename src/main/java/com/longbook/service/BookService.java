@@ -24,7 +24,7 @@ import static lib.MyLib.echoSuccessMessage;
 @Path("/book")
 public class BookService {
     //Book Message
-    public static final String NOT_EXIST = "This book doesn't exist";
+    public static final String NOT_FOUND = "Book not found";
     public static final String EMPTY_DATA = "Empty data";
     public static final String CANNOT_INSERT = "Can't insert this book";
     public static final String CANNOT_DELETE = "Can't delete this book";
@@ -64,7 +64,7 @@ public class BookService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);
-        return (book == null) ? echoErrorMessage(NOT_EXIST) : echoSuccessMessage(book.toJSON());
+        return (book == null) ? echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND) : echoSuccessMessage(book.toJSON());
     }
 
 
@@ -90,7 +90,7 @@ public class BookService {
     public Response delete(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);
         if (book == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             if (BookDao.delete(book)) return echoSuccessMessage(DELETE_SUCCESSFUL);
             else return echoErrorMessage(CANNOT_DELETE);
@@ -106,7 +106,7 @@ public class BookService {
             return echoErrorMessage("Invalid input data");
 
         if (BookDao.get(bookId) == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             Book dupBook = BookDao.getNotId(bookId, book.getTitle(), book.getContent());
             if (dupBook != null) {
@@ -129,7 +129,7 @@ public class BookService {
             return Response.status(Response.Status.BAD_REQUEST).entity(echoErrorMessage(validResult)).build();
 
         if (BookDao.get(bookId) == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             Categories allCategories = CategoryDao.getAllhasBook(bookId, start, limit);
             return (allCategories == null) ? echoErrorMessage(EMPTY_DATA) : echoSuccessMessage(allCategories.toJSON());
@@ -142,11 +142,11 @@ public class BookService {
     public Response addCategory(@PathParam("book_id") String bookId, String inputData) {
         Book book = BookDao.get(bookId);
         if (book == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             Category category = getCategoryfromInput(inputData);
-            if (category == null) return echoErrorMessage(INVALID_INPUT_DATA);
-            else if (CategoryDao.get(category.getId()) == null) return echoErrorMessage(CategoryService.NOT_EXIST);
+            if (category == null) return echoErrorMessage(INVALID_INPUT_DATA, Response.Status.BAD_REQUEST);
+            else if (CategoryDao.get(category.getId()) == null) return echoErrorMessage(CategoryService.NOT_FOUND, Response.Status.NOT_FOUND);
             else if (BookDao.ishasCategory(book, category.getId())) return echoErrorMessage(ALREADY_HAS_CATEGORY);
             else {
                 BookCategory bookCategory = BookDao.insertCategory(book.getId(), category.getId());
@@ -161,10 +161,10 @@ public class BookService {
     public Response deleteCategory(@PathParam("book_id") String bookId, @PathParam("category_id") String categoryId) {
         Book book = BookDao.get(bookId);
         if (book == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             Category category = CategoryDao.get(categoryId);
-            if (category == null) return echoErrorMessage(CategoryService.NOT_EXIST);
+            if (category == null) return echoErrorMessage(CategoryService.NOT_FOUND, Response.Status.NOT_FOUND);
             else {
                 if (!BookDao.ishasCategory(book, category.getId())) return echoErrorMessage(NOT_HAS_CATEGORY);
                 else {
@@ -180,7 +180,7 @@ public class BookService {
     public Response deleteAllCategory(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);
         if (book == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             if (BookCategoryDao.getFromBook(book.getId()) == null) return echoErrorMessage(HAS_NO_CATEGORY);
             else if (BookDao.deleteAllCategory(book)) return echoSuccessMessage(DELETE_ALL_CATEGORY_SUCCESSFUL);

@@ -21,7 +21,7 @@ import static lib.MyLib.*;
  */
 @Path("/category")
 public class CategoryService {
-    public static final String NOT_EXIST = "This category doesn't exist";
+    public static final String NOT_FOUND = "Category not found";
     public static final String EMPTY_DATA = "Empty data";
     public static final String INVALID_INPUT_DATA = "Invalid input data";
     public static final String CANNOT_INSERT = "Can't insert this category";
@@ -48,7 +48,7 @@ public class CategoryService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get(@PathParam("category_id") String categoryId) {
         Category category = CategoryDao.get(categoryId);
-        return (category == null) ? echoErrorMessage(NOT_EXIST) : echoSuccessMessage(category.toJSON());
+        return (category == null) ? echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND) : echoSuccessMessage(category.toJSON());
     }
 
 
@@ -57,7 +57,7 @@ public class CategoryService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response insert(String categoryData) {
         String name = getCategoryNamefromInput(categoryData);
-        if (name == null) return echoErrorMessage(INVALID_INPUT_DATA);
+        if (name == null) return echoErrorMessage(INVALID_INPUT_DATA, Response.Status.BAD_REQUEST);
         Category category = new Category();
         category.setName(name);
         Category dupCategory = CategoryDao.gethasName(category.getName());
@@ -76,7 +76,7 @@ public class CategoryService {
     public Response delete(@PathParam("category_id") String categoryId) {
         Category category = CategoryDao.get(categoryId);
         if (category == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             if (CategoryDao.delete(category)) return echoSuccessMessage(DELETE_SUCCESSFUL);
             else return echoErrorMessage(CANNOT_DELETE);
@@ -89,13 +89,13 @@ public class CategoryService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("category_id") String categoryId, String categoryData) {
         String name = getCategoryNamefromInput(categoryData);
-        if (name == null) return echoErrorMessage(INVALID_INPUT_DATA);
+        if (name == null) return echoErrorMessage(INVALID_INPUT_DATA, Response.Status.BAD_REQUEST);
         Category category = new Category();
         category.setName(name);
         Category dupCategory = CategoryDao.gethasNamenotId(categoryId, category.getName());
 
         if (CategoryDao.get(categoryId) == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             if (dupCategory != null) return echoErrorMessage(DUPPLICATE_CONTENT + dupCategory.getId());
             else {
@@ -121,7 +121,7 @@ public class CategoryService {
         if (!"OK".equals(validResult)) return echoErrorMessage(validResult);
 
         if (CategoryDao.get(categoryId) == null) {
-            return echoErrorMessage(NOT_EXIST);
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
         } else {
             Books allBook = BookDao.getAllhasCategory(categoryId, start, limit);
             return (allBook == null) ? echoErrorMessage(EMPTY_DATA) : echoSuccessMessage(allBook.toJSON());

@@ -65,18 +65,23 @@ Mô tả hệ thống
   * **Code:** 200 <br />
     **Content:**
     
-        [
-            {
-                "id" : 1,
-                "title" : "Tên 1",
-                "content" : "Nội dung truyện 1"
-            },
-            {
-                 "id" : 2,
-                 "title" : "Tên 2",
-                 "content" : "Nội dung truyện 2"
-            }
-        ]
+        {
+            "result": 
+            [
+                {
+                    "id": 4,
+                    "title": "Khí Phi Hồ Sủng",
+                    "content": "Nội dung truyện Khí Phi Hồ Sủng"
+                },
+                {
+                    "id": 5,
+                    "title": "Mê Muội",
+                    "content": "Nội dung truyện Mê Muội"
+                }
+            ],
+            "message": "OK",
+            "status": 200
+        }
  
 * **Error Response:**
 
@@ -84,8 +89,8 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "Empty data"
+            "message": "Empty data",
+            "status": 400
         }
 
 * **Sample Call:**
@@ -117,19 +122,24 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "id" : 4,
-            "title" : "Tên",
-            "content" : "Nội dung"
+            "result": 
+            {
+                "id": 10,
+                "title": "Hào Môn Màu Đen: Gả Nhầm Ông Trùm Máu Lạnh",
+                "content": "Nội dung truyện"
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
 
-  * **Code:** 400 Bad Request <br />
+  * **Code:** 404 Not Found <br />
     **Content:**
     
         {
-            "error" : true,
-            "message" : "This book doesn't exist"
+            "message": "Book not found",
+            "status": 404
         }
 
 * **Sample Call:**
@@ -158,8 +168,8 @@ Mô tả hệ thống
    **Required:**
    
        {
-           "title" : {Tên truyện},
-           "content" : {Nội dung truyện}
+           "title": {Tên truyện},
+           "content": {Nội dung truyện}
        }
 
 * **Success Response:**
@@ -167,10 +177,15 @@ Mô tả hệ thống
   * **Code:** 200 <br />
     **Content:** 
     
-        { 
-            "id" : 2,
-            "title" : "Tên truyện",
-            "content" : "Nội dung truyện" 
+        {
+            "result": 
+            {
+                "id": 10,
+                "title": "Tên truyện",
+                "content": "Nội dung truyện"
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
@@ -180,22 +195,22 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "Duplicate content with book 2"
+            "status": 400,
+            "message": "Duplicate content with book 2"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Invalid input data"
+            "status": 400,
+            "message": "Invalid input data"
         }
         
       OR
     
         {
-            "error" : true,
-            "message" : "Can't insert this book"
+            "status": 400,
+            "message": "Can't insert this book"
         }
         
 
@@ -204,8 +219,8 @@ Mô tả hệ thống
    `POST` /book
        
        {
-            "title" : "Con cò",
-            "content" : "Con cò bay lả bay la"
+            "title": "Con cò",
+            "content": "Con cò bay lả bay la"
        }
 
 
@@ -231,8 +246,8 @@ Mô tả hệ thống
    **Required:**
    
        {
-           "title" : {Tên truyện},
-           "content" : {Nội dung truyện}
+           "title": {Tên truyện},
+           "content": {Nội dung truyện}
        }
 
 * **Success Response:**
@@ -241,9 +256,14 @@ Mô tả hệ thống
     **Content:** 
     
         {
-         "id" : 2,
-         "title" : "Tên truyện",
-         "content" : "Nội dung truyện"
+            "result": 
+            {
+                "id": 22,
+                "title": "Đỉnh Luyện Thần Ma 2",
+                "content": "Nội dung truyện đã chỉnh sửa"
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
@@ -252,22 +272,22 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "Duplicate content with book 2"
+            "status": 400,
+            "message": "Duplicate content with book 2"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Invalid input data"
+            "status": 400,
+            "message": "Invalid input data"
         }
        
       OR
     
         {
-            "error" : true,
-            "message" : "Can't update this book"
+            "status": 400,
+            "message": "Can't update this book"
         }
         
 
@@ -276,8 +296,8 @@ Mô tả hệ thống
    `PUT` /book/1
    
         {
-            "title" : "Con cò",
-            "content" : "Con cò bay lả bay la"
+            "title": "Con cò",
+            "content": "Con cò bay lả bay la"
         }
 
 
@@ -304,8 +324,8 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : false,
-            "message" : "Delete this book successful"
+            "status": 200,
+            "message": "Delete this book successful"
         }
         
  
@@ -315,15 +335,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "This book doesn't exist" 
+            "status": 400,
+            "message": "This book doesn't exist" 
         }
         
       OR
     
         {
-            "error" : true,
-            "message" : "Can't delete this book"
+            "status": 400,
+            "message": "Can't delete this book"
         }
         
 
@@ -361,16 +381,21 @@ Mô tả hệ thống
   * **Code:** 200 <br />
     **Content:** 
     
-        [
-            {
-                "name" : "Ngôn Tình",
-                "id" : 1
-            },
-            {
-                "name" : "Huyền Huyễn",
-                "id" : 3
-            }
-        ]
+        {
+            "result": 
+            [
+                {
+                    "name": "Ngôn Tình",
+                    "id": 1
+                },
+                {
+                    "name": "Truyện Teen",
+                    "id": 9
+                }
+            ],
+            "message": "OK",
+            "status": 200
+        }
  
 * **Error Response:**
 
@@ -378,15 +403,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true, 
-            "message" : "This book doesn't exist"
+            "status": 400, 
+            "message": "This book doesn't exist"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Empty data"
+            "status": 400,
+            "message": "Empty data"
         }
         
 
@@ -418,7 +443,7 @@ Mô tả hệ thống
    **Required:**
    
        {
-           "category_id" : {category_id}
+           "category_id": {category_id}
        }
    
 * **Success Response:**
@@ -427,8 +452,8 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : false,
-            "message" : "Insert this category for this book successful"
+            "status": 200,
+            "message": "Insert this category for this book successful"
         }
  
 * **Error Response:**
@@ -437,15 +462,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "This book is already has this category"
+            "status": 400,
+            "message": "This book is already has this category"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Can't insert this category for this book"
+            "status": 400,
+            "message": "Can't insert this category for this book"
         }
         
 
@@ -454,7 +479,7 @@ Mô tả hệ thống
    `POST` /book/1/category
    
         {
-            "category_id" : 4
+            "category_id": 4
         }
 
 ### 8. Delete all category of specified book
@@ -480,8 +505,8 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : false,
-            "message" : "Delete all category of this book successful"
+            "status": 200,
+            "message": "Delete all category of this book successful"
         }
  
 * **Error Response:**
@@ -490,15 +515,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "This book has no category"
+            "status": 400,
+            "message": "This book has no category"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Can't delete all category of this book"
+            "status": 400,
+            "message": "Can't delete all category of this book"
         }
         
 
@@ -528,8 +553,8 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : false,
-            "message" : "Delete this category of this book successful"
+            "status": 200,
+            "message": "Delete this category of this book successful"
         }
  
 * **Error Response:**
@@ -538,15 +563,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "This book is not has this category"
+            "status": 400,
+            "message": "This book is not has this category"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Can't delete this category for this book"
+            "status": 400,
+            "message": "Can't delete this category for this book"
         }
         
 
@@ -586,16 +611,21 @@ Mô tả hệ thống
   * **Code:** 200 <br />
     **Content:** 
     
-        [
-            {
-                "name" : "Ngôn Tình",
-                "id" : 1
-            },
-            {
-                "name" : "Xuyên Không",
-                "id" : 2
-            }
-        ]
+        {
+            "result": 
+            [
+                {
+                    "name": "Ngôn Tình",
+                    "id": 1
+                },
+                {
+                    "name": "Xuyên Không",
+                    "id": 2
+                }
+            ],
+            "message": "OK",
+            "status": 200
+        }
  
 * **Error Response:**
 
@@ -603,8 +633,8 @@ Mô tả hệ thống
     **Content:**
     
         {
-            "error" : true,
-            "message" : "Empty data"
+            "status": 400,
+            "message": "Empty data"
         }
 
 * **Sample Call:**
@@ -635,8 +665,13 @@ Mô tả hệ thống
     **Content:**
     
         {
-            "name" : "Ngôn Tình",
-            "id" : 1
+            "result": 
+            {
+                "name": "Ngôn Tình",
+                "id": 1
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
@@ -645,8 +680,8 @@ Mô tả hệ thống
     **Content:**
     
         {
-            "error" : true,
-            "message" : "This category doesn't exist"
+            "status": 400,
+            "message": "This category doesn't exist"
         }
 
 * **Sample Call:**
@@ -675,7 +710,7 @@ Mô tả hệ thống
    **Required:**
    
        {
-           "name" : {Tên thể loại}
+           "name": {Tên thể loại}
        }
 
 * **Success Response:**
@@ -684,8 +719,13 @@ Mô tả hệ thống
     **Content:**
     
         {
-            "title" : "Tên thể loại",
-            "id" : 2
+            "result": 
+            {
+                "name": "Tên thể loại",
+                "id": 17
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
@@ -695,22 +735,22 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "Duplicate content with category 2"
+            "status": 400,
+            "message": "Duplicate content with category 2"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Invalid input data"
+            "status": 400,
+            "message": "Invalid input data"
         }
         
       OR
     
         {
-            "error" : true,
-            "message" : "Can't insert this category"
+            "status": 400,
+            "message": "Can't insert this category"
         }
         
 
@@ -719,7 +759,7 @@ Mô tả hệ thống
    `POST` /category
    
         {
-            "name" : "Truyện cười"
+            "name": "Truyện cười"
         }
 
 
@@ -745,7 +785,7 @@ Mô tả hệ thống
    **Required:**
    
        {
-           "name" : {Tên thể loại mới}
+           "name": {Tên thể loại mới}
        }
 
 * **Success Response:**
@@ -754,8 +794,13 @@ Mô tả hệ thống
     **Content:**
     
         {
-         "id" : 2,
-         "title" : "Tên thể loại mới"
+            "result": 
+            {
+                "name": "Tên thể loại mới",
+                "id": 2
+            },
+            "message": "OK",
+            "status": 200
         }
  
 * **Error Response:**
@@ -764,15 +809,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "Duplicate content with category 2"
+            "status": 400,
+            "message": "Duplicate content with category 2"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Invalid input data"
+            "status": 400,
+            "message": "Invalid input data"
         }
         
 
@@ -781,7 +826,7 @@ Mô tả hệ thống
    `PUT` /category/1
    
          {
-            "name" : "Truyện cười"
+            "name": "Truyện cười"
          }
 
 
@@ -808,8 +853,8 @@ Mô tả hệ thống
     **Content:**
     
         {
-            "error" : false,
-            "message" : "Delete this category successful"
+            "status": 200,
+            "message": "Delete this category successful"
         }
  
 * **Error Response:**
@@ -818,15 +863,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true,
-            "message" : "This category doesn't exist" 
+            "status": 400,
+            "message": "This category doesn't exist" 
         }
         
       OR
     
         {
-            "error" : true,
-            "message" : "Can't delete this category"
+            "status": 400,
+            "message": "Can't delete this category"
         }
         
 
@@ -863,18 +908,22 @@ Mô tả hệ thống
   * **Code:** 200 <br />
     **Content:**
     
-        [
-            {
-                "id" : 29,
-                "title" : "Giới Thần",
-                "content" : "Nội dung truyện 29"
-            },
-            {
-                "id" : 77,
-                "title" : "Hạt Giống Tiến Hóa",
-                "content" : "Nội dung truyện 77"
-            }
-        ]
+        {
+            "result": 
+            [
+                {
+                    "id": 7,
+                    "title": "Ông Xã Là Trung Khuyển",
+                    "content": "Nội dung truyện Ông Xã Là Trung Khuyển"},
+                {
+                    "id": 17,
+                    "title": "Gian Nịnh Quốc Sư Yêu Tà Thê",
+                    "content": "Nội dung truyện Gian Nịnh Quốc Sư Yêu Tà Thê"
+                }
+            ],
+            "message": "OK",
+            "status": 200
+        }
  
 * **Error Response:**
 
@@ -882,15 +931,15 @@ Mô tả hệ thống
     **Content:** 
     
         {
-            "error" : true, 
-            "message" : "This category doesn't exist"
+            "status": 400, 
+            "message": "This category doesn't exist"
         }
     
       OR
     
         {
-            "error" : true,
-            "message" : "Empty data"
+            "status": 400,
+            "message": "Empty data"
         }
         
 

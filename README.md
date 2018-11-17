@@ -59,8 +59,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         [
             {
                 "id" : 1,
@@ -78,7 +78,7 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:** 
-    ***
+    
         {
             "error" : true,
             "message" : "Empty data"
@@ -107,7 +107,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
             "id" : 4,
             "title" : "Tên",
@@ -118,7 +118,7 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:**
-    ***
+    
         {
             "error" : true,
             "message" : "This book doesn't exist"
@@ -144,7 +144,7 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   ***
+   
        {
            "title" : {Tên truyện},
            "content" : {Nội dung truyện}
@@ -154,7 +154,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         { 
             "id" : 2,
             "title" : "Tên truyện",
@@ -208,7 +208,7 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   ***
+   
        {
            "title" : {Tên truyện},
            "content" : {Nội dung truyện}
@@ -218,7 +218,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
          "id" : 2,
          "title" : "Tên truyện",
@@ -272,7 +272,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
             "error" : false,
             "message" : "Delete this book successful"
@@ -326,7 +326,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         [
             {
                 "name" : "Ngôn Tình",
@@ -378,7 +378,7 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   ***
+   
        {
            "category_id" : {category_id}
        }
@@ -387,7 +387,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
             "error" : false,
             "message" : "Insert this category for this book successful"
@@ -432,7 +432,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
             "error" : false,
             "message" : "Delete all category of this book successful"
@@ -476,7 +476,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         {
             "error" : false,
             "message" : "Delete this category of this book successful"
@@ -531,7 +531,7 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    ***
+    
         [
             {
                 "name" : "Ngôn Tình",
@@ -546,8 +546,8 @@ Mô tả hệ thống
 * **Error Response:**
 
   * **Code:** 400 Bad Request <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         {
             "error" : true,
             "message" : "Empty data"
@@ -574,8 +574,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         {
             "name" : "Ngôn Tình",
             "id" : 1
@@ -585,7 +585,7 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:**
-    ***
+    
         {
             "error" : true,
             "message" : "This category doesn't exist"
@@ -611,7 +611,7 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   ***
+   
        {
            "name" : {Tên thể loại}
        }
@@ -619,8 +619,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         {
             "title" : "Tên thể loại",
             "id" : 2
@@ -673,7 +673,7 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   ***
+   
        {
            "name" : {Tên thể loại mới}
        }
@@ -681,8 +681,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         {
          "id" : 2,
          "title" : "Tên thể loại mới"
@@ -727,8 +727,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         {
             "error" : false,
             "message" : "Delete this category successful"
@@ -779,8 +779,8 @@ Mô tả hệ thống
 * **Success Response:**
   
   * **Code:** 200 <br />
-    **Content:** 
-    ***
+    **Content:**
+    
         [
             {
                 "id" : 29,

@@ -42,7 +42,7 @@ Mô tả hệ thống
 
 * **URL**
 
-  /book
+  `/book`
 
 * **Authentication**
 
@@ -95,7 +95,7 @@ Mô tả hệ thống
 
 
 
-### 2. Get a specific book
+### 2. Get a specified book
 
   Lấy thông tin của 1 truyện cụ thể
 
@@ -272,7 +272,7 @@ Mô tả hệ thống
 
 
 
-### 5. Delete a specific book
+### 5. Delete a specified book
 
   Xóa một truyện
 
@@ -322,7 +322,7 @@ Mô tả hệ thống
    `DELETE` /book/1 <br />
 
 
-### 6. Show of category of specific book
+### 6. Show of category of specified book
 
   Xem thông tin các thể loại của một truyện cụ thể
 
@@ -386,7 +386,7 @@ Mô tả hệ thống
    `GET` /book/1/category?start=0&limit=2 <br />
    
 
-### 7. Insert a category of specific book
+### 7. Insert a category of specified book
 
   Thêm thể một thể loại cho một truyện cụ thể
 
@@ -443,7 +443,7 @@ Mô tả hệ thống
 
    `POST` /book/1/category <br />
 
-### 8. Delete all category of specific book
+### 8. Delete all category of specified book
 
   Xóa tất cả các thể loại của một truyện cụ thể
 
@@ -492,7 +492,7 @@ Mô tả hệ thống
 
    `DELETE` /book/1/category <br />
    
-### 9. Delete a category of specific book
+### 9. Delete a category of specified book
 
   Xóa một thể loại của một truyện cụ thể
 
@@ -599,7 +599,7 @@ Mô tả hệ thống
    `GET` /category?start=1&limit=2
 
 
-### 2. Get a specific category
+### 2. Get a specified category
 
   Lấy thông tin cụ thể của 1 thể loại
 
@@ -764,7 +764,7 @@ Mô tả hệ thống
 
 
 
-### 5. Delete a specific category
+### 5. Delete a specified category
 
   Xóa một thể loại
 
@@ -812,7 +812,7 @@ Mô tả hệ thống
 
    `DELETE` /category/1 <br />
 
-### 6. Show all book of specific category
+### 6. Show all book of specified category
 
   Xem danh sách các truyện thuộc một thể loại cụ thể
 

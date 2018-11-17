@@ -42,7 +42,7 @@ Mô tả hệ thống
 
 * **URL**
 
-  `/book`
+  /book
 
 * **Authentication**
 

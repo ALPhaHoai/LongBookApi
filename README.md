@@ -32,11 +32,11 @@ Mô tả hệ thống
 
 
 
-#API Restful Service
+# API Restful Service
 
-##1. Book Node
+## 1. Book Node
 
-###1. Get all Book
+### 1. Get all Book
 
   Lấy thông tin danh sách các truyện
 
@@ -94,7 +94,7 @@ Mô tả hệ thống
 
 
 
-###2. Get a specific book
+### 2. Get a specific book
 
   Lấy thông tin của 1 truyện cụ thể
 
@@ -134,7 +134,7 @@ Mô tả hệ thống
    `GET` /book/1 <br />
 
 
-###3. Insert book
+### 3. Insert book
 
   Thêm 1 truyện
 
@@ -200,7 +200,7 @@ Mô tả hệ thống
 
 
 
-###4. Update book
+### 4. Update book
 
   Update 1 truyện
 
@@ -265,7 +265,7 @@ Mô tả hệ thống
 
 
 
-###5. Delete a specific book
+### 5. Delete a specific book
 
   Xóa một truyện
 
@@ -312,7 +312,7 @@ Mô tả hệ thống
    `DELETE` /book/1 <br />
 
 
-###6. Show of category of specific book
+### 6. Show of category of specific book
 
   Xem thông tin các thể loại của một truyện cụ thể
 
@@ -373,9 +373,9 @@ Mô tả hệ thống
    `GET` /book/1/category?start=0&limit=2 <br />
    
    
-##2. Category Node
+## 2. Category Node
 
-###1. Get all category
+### 1. Get all category
 
   Lấy thông tin tất cả các thể loại
 
@@ -430,7 +430,7 @@ Mô tả hệ thống
    `GET` /category?start=1&limit=2
 
 
-###2. Get a specific category
+### 2. Get a specific category
 
   Lấy thông tin cụ thể của 1 thể loại
 
@@ -469,7 +469,7 @@ Mô tả hệ thống
    `GET` /category/1 <br />
 
 
-###3. Insert category
+### 3. Insert category
 
   Thêm 1 thể loại
 
@@ -533,7 +533,7 @@ Mô tả hệ thống
 
 
 
-###4. Update category
+### 4. Update category
 
   Update 1 thể loại
 
@@ -589,7 +589,7 @@ Mô tả hệ thống
 
 
 
-###5. Delete a specific category
+### 5. Delete a specific category
 
   Xóa một thể loại
 
@@ -634,7 +634,7 @@ Mô tả hệ thống
 
    `DELETE` /category/1 <br />
 
-###6. Show all book of specific category
+### 6. Show all book of specific category
 
   Xem danh sách các truyện thuộc một thể loại cụ thể
 
@@ -697,9 +697,9 @@ Mô tả hệ thống
    `GET` /category/1/book?start=0&limit=2 <br />
 
 
-##3. Book Category Node
+## 3. Book Category Node
 
-###1. Get all book category
+### 1. Get all book category
 
 Lấy thông tin danh sách các mối liên kết giữa truyện và thể loại
 
@@ -755,7 +755,7 @@ Lấy thông tin danh sách các mối liên kết giữa truyện và thể lo�
    `GET` /bookcategory <br />
    `GET` /bookcategory?start=1&limit=2
 
-###2. Get a specific book category
+### 2. Get a specific book category
 
   Lấy thông tin cụ thể của 1 liên hệ cụ thể giữa truyện và thể loại
 
@@ -795,7 +795,7 @@ Lấy thông tin danh sách các mối liên kết giữa truyện và thể lo�
    `GET` /bookcategory/1 <br />
 
 
-###3. Insert book category
+### 3. Insert book category
 
   Thêm 1 liên hệ giữa truyện và thể loại
 
@@ -859,7 +859,7 @@ Lấy thông tin danh sách các mối liên kết giữa truyện và thể lo�
 
    `POST` /bookcategory <br />
 
-###4. Update book
+### 4. Update book
 
   Update 1 liên hệ giữa truyện và thể loại
 
@@ -915,7 +915,7 @@ Lấy thông tin danh sách các mối liên kết giữa truyện và thể lo�
 
    `PUT` /bookcategory/1 <br />
 
-###5. Delete a specific book category
+### 5. Delete a specific book category
 
   Xóa 1 liên hệ giữa truyện và thể loại
 

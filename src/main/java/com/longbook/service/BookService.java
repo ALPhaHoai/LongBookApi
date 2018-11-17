@@ -49,6 +49,7 @@ public class BookService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response insert(Book book) {
+        if(book.getTitle() == null || book.getTitle().length() == 0 || book.getContent() == null || book.getContent().length() == 0) return echoErrorMessage("Invalid input data");
         Book dupBook = BookDao.get(book.getTitle(), book.getContent());
         if (dupBook != null) {
             return echoErrorMessage("Duplicate content with book " + dupBook.getId());
@@ -76,6 +77,7 @@ public class BookService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("book_id") String bookId, Book book) {
+        if(book.getTitle() == null || book.getTitle().length() == 0 || book.getContent() == null || book.getContent().length() == 0) return echoErrorMessage("Invalid input data");
         if (BookDao.get(bookId) != null) {
             Book dupBook = BookDao.getNotId(bookId, book.getTitle(), book.getContent());
             if (dupBook != null) {
@@ -96,9 +98,10 @@ public class BookService {
         String validResult = MyLib.isValidPaginationInput(start, limit);
         if (!"OK".equals(validResult))
             return Response.status(Response.Status.BAD_REQUEST).entity(echoErrorMessage(validResult)).build();
-
+        if (BookDao.get(bookId) != null) {
         Categories allCategories = CategoryDao.getAllhasBook(bookId, start, limit);
         return (allCategories == null) ? echoErrorMessage("Empty data") : echoSuccessMessage(allCategories.toJSON());
+        } else return echoErrorMessage("This book doesn't exist");
     }
 
 

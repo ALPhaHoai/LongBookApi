@@ -1,5 +1,6 @@
 package com.longbook.model;
 
+import com.mysql.cj.util.StringUtils;
 import net.minidev.json.JSONObject;
 
 /**
@@ -34,12 +35,19 @@ public class BookCategory extends JSONExport {
         return id;
     }
 
+    public int getIdInt() {
+        return (StringUtils.isStrictlyNumeric(id)) ? Integer.valueOf(id) : -1;
+    }
+
     public void setId(String id) {
         this.id = id;
     }
 
     public String getBookId() {
         return bookId;
+    }
+    public int getBookIdInt() {
+        return (StringUtils.isStrictlyNumeric(bookId)) ? Integer.valueOf(bookId) : -1;
     }
 
     public void setBookId(String bookId) {
@@ -49,6 +57,9 @@ public class BookCategory extends JSONExport {
     public String getCategoryId() {
         return categoryId;
     }
+    public int getCategoryIdInt() {
+        return (StringUtils.isStrictlyNumeric(categoryId)) ? Integer.valueOf(categoryId) : -1;
+    }
 
     public void setCategoryId(String categoryId) {
         this.categoryId = categoryId;
@@ -56,9 +67,9 @@ public class BookCategory extends JSONExport {
 
     public JSONObject toJSON() {
         return new JSONObject()
-                .appendField("id", id)
-                .appendField("book_id", bookId)
-                .appendField("category_id", categoryId);
+                .appendField("id", getIdInt())
+                .appendField("book_id", getBookIdInt())
+                .appendField("category_id", getCategoryIdInt());
     }
 
 }

@@ -44,10 +44,10 @@ public class BookCategoryService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response insert(String inputStringData) {
         BookCategory bookCategory = getBookCategoryfromInput(inputStringData);
-        if (bookCategory == null) return echoErrorMessage("Invalid data");
+        if (bookCategory == null) return echoErrorMessage("Invalid input data");
         BookCategory dupBookCategory = BookCategoryDao.get(bookCategory.getBookId(), bookCategory.getCategoryId());
         if (dupBookCategory != null) {
-            return echoErrorMessage("This book already has category " + dupBookCategory.getCategoryId());
+            return echoErrorMessage("Duplicate content with book category " + dupBookCategory.getId());
         } else {
             BookCategory insertBookCategory = BookCategoryDao.insert(bookCategory);
             return (insertBookCategory == null) ? echoErrorMessage("Can't insert this book category") : echoSuccessMessage(insertBookCategory.toJSON());
@@ -73,7 +73,7 @@ public class BookCategoryService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("bookcategory_id") String bookCategoryId, String inputStringData) {
         BookCategory bookCategory = getBookCategoryfromInput(inputStringData);
-        if (bookCategory == null) return echoErrorMessage("Invalid data");
+        if (bookCategory == null) return echoErrorMessage("Invalid input data");
         if (BookCategoryDao.get(bookCategoryId) != null) {
             BookCategory dupBookCategory = BookCategoryDao.getNotId(bookCategoryId, bookCategory.getBookId(), bookCategory.getCategoryId());
             if (dupBookCategory != null) {

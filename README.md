@@ -44,6 +44,10 @@ Mô tả hệ thống
 
   /book
 
+* **Authentication**
+
+  `No`
+
 * **Method:**
   
   `GET`
@@ -99,6 +103,10 @@ Mô tả hệ thống
 
   /book/{book_id}
 
+* **Authentication**
+
+  `No`
+
 * **Method:**
   
   `GET`
@@ -136,6 +144,10 @@ Mô tả hệ thống
 * **URL**
 
   /book
+
+* **Authentication**
+
+  `Yes`
 
 * **Method:**
   
@@ -201,6 +213,10 @@ Mô tả hệ thống
 
   /book/{book_id}
 
+* **Authentication**
+
+  `Yes`
+
 * **Method:**
   
   `PUT`
@@ -264,6 +280,10 @@ Mô tả hệ thống
 
   /book/{book_id}
 
+* **Authentication**
+
+  `Yes`
+
 * **Method:**
   
   `DELETE`
@@ -313,7 +333,11 @@ Mô tả hệ thống
 * **Method:**
   
   `GET`
-  
+
+* **Authentication**
+
+  `No`
+
 *  **URL Params**
 
    **Optional:**
@@ -330,7 +354,7 @@ Mô tả hệ thống
         [
             {
                 "name" : "Ngôn Tình",
-                "id":1
+                "id" : 1
             },
             {
                 "name" : "Huyền Huyễn",
@@ -369,6 +393,10 @@ Mô tả hệ thống
 * **URL**
 
   /book/{book_id}/category
+
+* **Authentication**
+
+  `Yes`
 
 * **Method:**
   
@@ -423,6 +451,10 @@ Mô tả hệ thống
 
   /book/{book_id}/category
 
+* **Authentication**
+
+  `Yes`
+
 * **Method:**
   
   `DELETE`
@@ -467,6 +499,10 @@ Mô tả hệ thống
 * **URL**
 
   /book/{book_id}/category/{category_id}
+
+* **Authentication**
+
+  `Yes`
 
 * **Method:**
   
@@ -514,6 +550,10 @@ Mô tả hệ thống
 * **URL**
 
   /category
+
+* **Authentication**
+
+  `No`
 
 * **Method:**
   
@@ -567,6 +607,10 @@ Mô tả hệ thống
 
   /book/{category_id}
 
+* **Authentication**
+
+  `No`
+
 * **Method:**
   
   `GET`
@@ -603,6 +647,10 @@ Mô tả hệ thống
 * **URL**
 
   /category
+
+* **Authentication**
+
+  `Yes`
 
 * **Method:**
   
@@ -666,6 +714,10 @@ Mô tả hệ thống
 
   /book/{category_id}
 
+* **Authentication**
+
+  `Yes`
+
 * **Method:**
   
   `PUT`
@@ -720,6 +772,10 @@ Mô tả hệ thống
 
   /category/{category_id}
 
+* **Authentication**
+
+  `Yes`
+
 * **Method:**
   
   `DELETE`
@@ -763,6 +819,10 @@ Mô tả hệ thống
 * **URL**
 
   /category/{category_id}/book
+
+* **Authentication**
+
+  `No`
 
 * **Method:**
   

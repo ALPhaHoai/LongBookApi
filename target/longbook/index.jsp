@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h2>Jersey RESTful Web Application!</h2>
-    <p><a href="longbookapi/myresource">Jersey resource</a>
+    <h2>Long Book API</h2>
+    <p><a href="#">Wellcome</a>
 </body>
 </html>

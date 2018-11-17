@@ -2,6 +2,7 @@ package com.longbook.dao;
 
 import com.longbook.model.Book;
 import com.longbook.model.BookCategories;
+import com.longbook.model.BookCategory;
 import com.longbook.model.Books;
 import com.mysql.cj.util.StringUtils;
 import lib.DB;
@@ -53,6 +54,17 @@ public class BookDao {
                 return false;
             }
             return true;
+        }
+        return true;
+    }
+
+    public static boolean deleteAllCategory(Book book) {
+        if (book != null && book.getIdInt() > 0) {
+            //get all category of this book
+            BookCategories bookCategoryList = BookCategoryDao.getFromBook(book.getId());
+
+            //Can't delete all category
+            return bookCategoryList == null || db.execute("DELETE FROM book_category WHERE book_id = " + book.getId());
         }
         return true;
     }
@@ -135,5 +147,26 @@ public class BookDao {
             return result;
         }
         return null;
+    }
+
+    //Check if this book has this category categoryId
+    public static boolean ishasCategory(Book book, String categoryId) {
+        if (book == null || !StringUtils.isStrictlyNumeric(book.getId()) || book.getIdInt() < 1) return false;
+        if (!StringUtils.isStrictlyNumeric(categoryId) || Integer.valueOf(categoryId) < 1) return false;
+        return db.select("*", "book_category", "book_id = " + book.getId() + " AND category_id = " + categoryId);
+    }
+
+    public static BookCategory insertCategory(String bookId, String categoryId) {
+        if (!StringUtils.isStrictlyNumeric(bookId) || Integer.valueOf(bookId) < 1) return null;
+        if (!StringUtils.isStrictlyNumeric(categoryId) || Integer.valueOf(categoryId) < 1) return null;
+        if (db.insert("book_category", new String[]{"book_id", "category_id"}, new String[]{bookId, categoryId})) {
+            return BookCategoryDao.get(bookId, categoryId);
+        } else return null;
+    }
+
+    public static boolean deleteCategory(String bookId, String categoryId) {
+        if (!StringUtils.isStrictlyNumeric(bookId) || Integer.valueOf(bookId) < 1) return false;
+        if (!StringUtils.isStrictlyNumeric(categoryId) || Integer.valueOf(categoryId) < 1) return false;
+        return db.execute("DELETE FROM book_category WHERE book_id = " + bookId + " AND category_id = " + categoryId);
     }
 }

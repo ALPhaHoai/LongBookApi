@@ -60,7 +60,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         [
             {
@@ -79,9 +78,7 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:** 
-    
     ***
-    
         {
             "error" : true,
             "message" : "Empty data"
@@ -110,7 +107,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
             "id" : 4,
@@ -122,7 +118,6 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:**
-    
     ***
         {
             "error" : true,
@@ -149,18 +144,16 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   
    ***
        {
-           "title" : "Tên truyện",
-           "content" : "Nội dung truyện"
+           "title" : {Tên truyện},
+           "content" : {Nội dung truyện}
        }
 
 * **Success Response:**
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         { 
             "id" : 2,
@@ -215,18 +208,16 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   
    ***
        {
-           "title" : "Tên truyện",
-           "content" : "Nội dung truyện"
+           "title" : {Tên truyện},
+           "content" : {Nội dung truyện}
        }
 
 * **Success Response:**
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
          "id" : 2,
@@ -281,7 +272,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
             "error" : false,
@@ -336,7 +326,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         [
             {
@@ -372,7 +361,150 @@ Mô tả hệ thống
    `GET` /book/1/category <br />
    `GET` /book/1/category?start=0&limit=2 <br />
    
+
+### 7. Insert a category of specific book
+
+  Thêm thể một thể loại cho một truyện cụ thể
+
+* **URL**
+
+  /book/{book_id}/category
+
+* **Method:**
+  
+  `POST`
+  
+
+*  **Data Params**
+
+   **Required:**
+   ***
+       {
+           "category_id" : {category_id}
+       }
    
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ***
+        {
+            "error" : false,
+            "message" : "Insert this category for this book successful"
+        }
+ 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** 
+    
+        {
+            "error" : true,
+            "message" : "This book is already has this category"
+        }
+    
+      OR
+    
+        {
+            "error" : true,
+            "message" : "Can't insert this category for this book"
+        }
+        
+
+* **Sample Call:**
+
+   `POST` /book/1/category <br />
+
+### 8. Delete all category of specific book
+
+  Xóa tất cả các thể loại của một truyện cụ thể
+
+* **URL**
+
+  /book/{book_id}/category
+
+* **Method:**
+  
+  `DELETE`
+  
+   
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ***
+        {
+            "error" : false,
+            "message" : "Delete all category of this book successful"
+        }
+ 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** 
+    
+        {
+            "error" : true,
+            "message" : "This book has no category"
+        }
+    
+      OR
+    
+        {
+            "error" : true,
+            "message" : "Can't delete all category of this book"
+        }
+        
+
+* **Sample Call:**
+
+   `DELETE` /book/1/category <br />
+   
+### 9. Delete a category of specific book
+
+  Xóa một thể loại của một truyện cụ thể
+
+* **URL**
+
+  /book/{book_id}/category/{category_id}
+
+* **Method:**
+  
+  `DELETE`
+   
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    ***
+        {
+            "error" : false,
+            "message" : "Delete this category of this book successful"
+        }
+ 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** 
+    
+        {
+            "error" : true,
+            "message" : "This book is not has this category"
+        }
+    
+      OR
+    
+        {
+            "error" : true,
+            "message" : "Can't delete this category for this book"
+        }
+        
+
+* **Sample Call:**
+
+   `DELETE` /book/1/category/2 <br />
+   
+      
 ## 2. Category Node
 
 ### 1. Get all category
@@ -399,7 +531,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         [
             {
@@ -416,9 +547,7 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:** 
-    
     ***
-    
         {
             "error" : true,
             "message" : "Empty data"
@@ -446,7 +575,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
             "name" : "Ngôn Tình",
@@ -457,7 +585,6 @@ Mô tả hệ thống
 
   * **Code:** 400 Bad Request <br />
     **Content:**
-    
     ***
         {
             "error" : true,
@@ -484,17 +611,15 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   
    ***
        {
-           "name" : "Tên thể loại"
+           "name" : {Tên thể loại}
        }
 
 * **Success Response:**
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
             "title" : "Tên thể loại",
@@ -548,17 +673,15 @@ Mô tả hệ thống
 *  **Data Params**
 
    **Required:**
-   
    ***
        {
-           "name" : "Tên thể loại mới"
+           "name" : {Tên thể loại mới}
        }
 
 * **Success Response:**
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
          "id" : 2,
@@ -605,7 +728,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         {
             "error" : false,
@@ -658,7 +780,6 @@ Mô tả hệ thống
   
   * **Code:** 200 <br />
     **Content:** 
-    
     ***
         [
             {
@@ -695,268 +816,3 @@ Mô tả hệ thống
 
    `GET` /category/1/book <br />
    `GET` /category/1/book?start=0&limit=2 <br />
-
-
-## 3. Book Category Node
-
-### 1. Get all book category
-
-Lấy thông tin danh sách các mối liên kết giữa truyện và thể loại
-
-* **URL**
-
-  /bookcategory
-
-* **Method:**
-  
-  `GET`
-  
-*  **URL Params**
-
-   **Optional:**
- 
-   `start=[0-~] unsigned integer default:0`
-   
-   `limit=[1-100] unsigned integer default:10`
-
-* **Success Response:**
-  
-  * **Code:** 200 <br />
-    **Content:** 
-    
-    ***
-        [
-            {
-                "category_id" : 1,
-                "id" : 2,
-                "book_id" : 1
-            },
-            {
-                 "category_id" : 1,
-                 "id" : 3,
-                 "book_id" : 2
-            }
-        ]
- 
-* **Error Response:**
-
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    
-    ***
-    
-        {
-            "error" : true,
-            "message" : "Empty data"
-        }
-
-* **Sample Call:**
-
-   `GET` /bookcategory <br />
-   `GET` /bookcategory?start=1&limit=2
-
-### 2. Get a specific book category
-
-  Lấy thông tin cụ thể của 1 liên hệ cụ thể giữa truyện và thể loại
-
-* **URL**
-
-  /bookcategory/{bookcategory_id}
-
-* **Method:**
-  
-  `GET`
-  
-* **Success Response:**
-  
-  * **Code:** 200 <br />
-    **Content:** 
-    
-    ***
-        {
-            "category_id" : 2,
-            "id" : 4,
-            "book_id" : 4
-        }
- 
-* **Error Response:**
-
-  * **Code:** 400 Bad Request <br />
-    **Content:**
-    
-    ***
-        {
-            "error" : true,
-            "message" : "This book category doesn't exist"
-        }
-
-* **Sample Call:**
-
-   `GET` /bookcategory/1 <br />
-
-
-### 3. Insert book category
-
-  Thêm 1 liên hệ giữa truyện và thể loại
-
-* **URL**
-
-  /bookcategory
-
-* **Method:**
-  
-  `POST`
-  
-*  **Data Params**
-
-   **Required:**
-   
-   ***
-       {
-           "category_id" : 2,
-           "book_id" : 4
-       }
-
-* **Success Response:**
-  
-  * **Code:** 200 <br />
-    **Content:** 
-    
-    ***
-        {
-            "category_id" : 2,
-            "id" : 4,
-            "book_id" : 4
-        }
- 
-* **Error Response:**
-
-  * **Code:** 400 Bad Request <br />
-  
-    **Content:** 
-    
-        {
-            "error" : true,
-            "message" : "Duplicate content with book category 2"
-        }
-    
-      OR
-    
-        {
-            "error" : true,
-            "message" : "Invalid input data"
-        }
-        
-      OR
-    
-        {
-            "error" : true,
-            "message" : "Can't insert this book category"
-        }
-        
-
-* **Sample Call:**
-
-   `POST` /bookcategory <br />
-
-### 4. Update book
-
-  Update 1 liên hệ giữa truyện và thể loại
-
-* **URL**
-
-  /bookcategory/{bookcategory_id}
-
-* **Method:**
-  
-  `PUT`
-  
-*  **Data Params**
-
-   **Required:**
-      
-    ***
-        {
-            "category_id" : 2,
-            "book_id" : 7
-        }
-
-* **Success Response:**
-  
-  * **Code:** 200 <br />
-    **Content:** 
-    
-    ***
-        {
-            "category_id" : 2,
-            "id" : 4,
-            "book_id" : 7
-        }
- 
-* **Error Response:**
-
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    
-        {
-            "error" : true,
-            "message" : "Duplicate content with book category 4"
-        }
-    
-      OR
-    
-        {
-            "error" : true,
-            "message" : "Invalid input data"
-        }
-        
-
-* **Sample Call:**
-
-   `PUT` /bookcategory/1 <br />
-
-### 5. Delete a specific book category
-
-  Xóa 1 liên hệ giữa truyện và thể loại
-
-* **URL**
-
-  /bookcategory/{bookcategory_id}
-
-* **Method:**
-  
-  `DELETE`
-  
-* **Success Response:**
-  
-  * **Code:** 200 <br />
-    **Content:** 
-    
-    ***
-        {
-            "error" : false,
-            "message" : "Delete this book category successful"
-        }
-        
- 
-* **Error Response:**
-
-  * **Code:** 400 Bad Request <br />
-    **Content:** 
-    
-        {
-            "error" : true,
-            "message" : "This book category doesn't exist" 
-        }
-        
-      OR
-    
-        {
-            "error" : true,
-            "message" : "Can't delete this book category"
-        }
-        
-
-* **Sample Call:**
-
-   `DELETE` /bookcategory/1 <br />

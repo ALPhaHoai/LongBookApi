@@ -7,27 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="752dacad-a6d9-4308-8e60-3132f84a09d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/model/BookCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/model/BookCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/service/BookCategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/service/BookCategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/MyResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/service/BookCategoryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/model/BookCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/model/BookCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/model/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/service/BookCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/service/BookCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/MyResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/service/BookCategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/service/BookService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/longbook/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/longbook/service/CategoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/BookCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/BookCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/model/Category.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/BookCategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/BookCategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/MyResource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/dao/BookDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/dao/BookDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/BookCategoryService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/BookService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/WEB-INF/classes/com/longbook/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/longbook/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/longbook/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -60,9 +58,9 @@
         <counts>
           <entry key="ft" value="6" />
           <entry key="html" value="11" />
-          <entry key="java" value="11860" />
-          <entry key="jsp" value="3" />
-          <entry key="md" value="3505" />
+          <entry key="java" value="13659" />
+          <entry key="jsp" value="56" />
+          <entry key="md" value="3842" />
           <entry key="properties" value="10" />
           <entry key="txt" value="64" />
           <entry key="xml" value="26" />
@@ -71,9 +69,9 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="11" />
-          <entry key="JAVA" value="11860" />
-          <entry key="JSP" value="3" />
-          <entry key="Markdown" value="3505" />
+          <entry key="JAVA" value="13659" />
+          <entry key="JSP" value="56" />
+          <entry key="Markdown" value="3842" />
           <entry key="PLAIN_TEXT" value="64" />
           <entry key="Properties" value="10" />
           <entry key="VTL" value="6" />
@@ -84,9 +82,9 @@
         <counts>
           <entry key="0-SNAPSHOT" value="1" />
           <entry key="html" value="1" />
-          <entry key="java" value="225" />
-          <entry key="jsp" value="2" />
-          <entry key="md" value="4" />
+          <entry key="java" value="234" />
+          <entry key="jsp" value="3" />
+          <entry key="md" value="6" />
           <entry key="properties" value="1" />
           <entry key="xml" value="3" />
         </counts>
@@ -94,9 +92,9 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="225" />
-          <entry key="JSP" value="2" />
-          <entry key="Markdown" value="4" />
+          <entry key="JAVA" value="234" />
+          <entry key="JSP" value="3" />
+          <entry key="Markdown" value="6" />
           <entry key="Properties" value="1" />
           <entry key="UML" value="1" />
           <entry key="XML" value="3" />
@@ -106,12 +104,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="43" column="97" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="101">
-                <caret line="917" column="4" selection-start-line="917" selection-start-column="4" selection-end-line="917" selection-end-column="4" />
+              <first_editor relative-caret-position="270">
+                <caret line="504" column="30" selection-start-line="504" selection-start-column="30" selection-end-line="504" selection-end-column="30" />
               </first_editor>
               <second_editor />
             </state>
@@ -149,9 +159,17 @@
       <find>Invalid</find>
       <find>Invalid input</find>
       <find>book</find>
-      <find>insert</find>
       <find>###4</find>
       <find>###5</find>
+      <find>Update book</find>
+      <find>***</find>
+      <find>Empty</find>
+      <find>insert</find>
+      <find>delete</find>
+      <find>successful</find>
+      <find>NOT_EXIST</find>
+      <find>Data Pa</find>
+      <find>Data Params</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -179,7 +197,6 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/MyResource.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/src/WeatherRESTfulService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/WeatherRESTfulService.java" />
@@ -197,7 +214,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/model/Books.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/model/Categories.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/dao/BookCategoryDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/dao/CategoryDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/restfulservice/BookService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/restfulservice/BookCategoryService.java" />
@@ -215,10 +231,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/AuthFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/model/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/model/Category.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/model/BookCategory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/BookCategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -328,6 +346,24 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="longbook" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Long Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LongBook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longbook" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Long Book" type="b2602c69:ProjectViewProjectNode" />
+              <item name="LongBook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="longbook" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -338,7 +374,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542429441933" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542436261458" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -480,7 +516,7 @@
       <workItem from="1542288627782" duration="5187000" />
       <workItem from="1542333447082" duration="1355000" />
       <workItem from="1542349584326" duration="16573000" />
-      <workItem from="1542423451800" duration="5979000" />
+      <workItem from="1542423451800" duration="12379000" />
     </task>
     <task id="LOCAL-00001" summary="Create API Restful Service documentation">
       <created>1542429041861</created>
@@ -489,7 +525,21 @@
       <option name="project" value="LOCAL" />
       <updated>1542429041861</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Create API Restful Service documentation">
+      <created>1542429465672</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542429465672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create API Restful Service documentation">
+      <created>1542430673612</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542430673612</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -498,7 +548,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59637000" />
+    <option name="totallyTimeSpent" value="66037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -514,7 +564,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.0852459" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.0852459" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5672131" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -688,13 +738,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lib/Config.java" />
     <entry file="file://$PROJECT_DIR$/config.properties" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/MyResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/model/JSONsExport.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -715,6 +758,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
           <caret line="154" selection-start-line="154" selection-end-line="154" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -722,16 +768,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="130" column="58" lean-forward="true" selection-start-line="130" selection-start-column="58" selection-end-line="130" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="123" column="90" lean-forward="true" selection-start-line="123" selection-start-column="90" selection-end-line="123" selection-end-column="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -753,6 +789,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="235" column="14" selection-start-line="235" selection-start-column="14" selection-end-line="235" selection-end-column="14" />
+          <folding>
+            <element signature="e#7376#7377#0" expanded="true" />
+            <element signature="e#7415#7416#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -813,20 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="59" selection-start-line="3" selection-start-column="59" selection-end-line="3" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/AuthFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/model/Categories.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -884,16 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1823">
-          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/model/BookCategory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -918,10 +934,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/MyResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/AuthFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="25" column="64" lean-forward="true" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/BookCategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="63" column="76" lean-forward="true" selection-start-line="63" selection-start-column="76" selection-end-line="63" selection-end-column="76" />
+        <state relative-caret-position="-30">
+          <caret line="75" column="78" selection-start-line="75" selection-start-column="58" selection-end-line="75" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/dao/BookDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="166" column="76" lean-forward="true" selection-start-line="166" selection-start-column="76" selection-end-line="166" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/CategoryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="128" column="5" lean-forward="true" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -930,8 +990,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longbook/service/BookService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="88" column="71" lean-forward="true" selection-start-line="88" selection-start-column="71" selection-end-line="88" selection-end-column="71" />
+        <state relative-caret-position="425">
+          <caret line="43" column="97" selection-start-line="43" selection-start-column="57" selection-end-line="43" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -941,8 +1001,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="101">
-            <caret line="917" column="4" selection-start-line="917" selection-start-column="4" selection-end-line="917" selection-end-column="4" />
+          <first_editor relative-caret-position="270">
+            <caret line="504" column="30" selection-start-line="504" selection-start-column="30" selection-end-line="504" selection-end-column="30" />
           </first_editor>
           <second_editor />
         </state>

@@ -125,7 +125,7 @@ Mô tả hệ thống
             "result": 
             {
                 "id": 10,
-                "title": "Hào Môn Màu Đen: Gả Nhầm Ông Trùm Máu Lạnh",
+                "title": "Tên truyện",
                 "content": "Nội dung truyện"
             },
             "message": "OK",

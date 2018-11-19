@@ -1,4 +1,4 @@
-package com.longbook.service;
+package com.longbook.filter;
 
 import com.longbook.dao.AdminDao;
 import org.glassfish.jersey.internal.util.Base64;

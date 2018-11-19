@@ -1,4 +1,4 @@
-package com.longbook.service;
+package com.longbook.filter;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
@@ -25,7 +25,6 @@ public class CORSFilter implements ContainerRequestFilter, ContainerResponseFilt
         // response filter method below.
         if (isPreflightRequest(request)) {
             request.abortWith(Response.ok().build());
-            return;
         }
     }
 

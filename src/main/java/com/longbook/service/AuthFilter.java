@@ -25,16 +25,19 @@ public class AuthFilter implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) {
         //Ignore auth if request is get method
-        if ("GET".equalsIgnoreCase(requestContext.getMethod())) return;
+        if ("GET".equalsIgnoreCase(requestContext.getMethod()) || "OPTIONS".equalsIgnoreCase(requestContext.getMethod()) ) return;
         try {
             String authToken = requestContext.getHeaders().get(AUTH_HEADER).get(0);
             if (authToken.startsWith(AUTH_HEADER_PREFIX)) {
                 authToken = authToken.replaceFirst(AUTH_HEADER_PREFIX, "");
                 authToken = Base64.decodeAsString(authToken);
                 StringTokenizer tokenizer = new StringTokenizer(authToken, ":");//token like username:password
-                if (AdminDao.isValid(tokenizer.nextToken(), tokenizer.nextToken())) return;
+                if (AdminDao.isValid(tokenizer.nextToken(), tokenizer.nextToken())) {
+                    return;
+                }
             }
         } catch (Exception ex) {
+            System.out.println("Authorization failed");
         }
         requestContext.abortWith(Response.status(Response.Status.FORBIDDEN).build());
     }

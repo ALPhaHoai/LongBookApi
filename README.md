@@ -482,7 +482,98 @@ Mô tả hệ thống
             "category_id": 4
         }
 
-### 8. Delete all category of specified book
+### 8. Update all category of specified book
+
+  Set tất cả các thể loại của một sách 
+
+* **URL**
+
+  /book/{book_id}/category
+
+* **Authentication**
+
+  `Yes`
+
+* **Method:**
+  
+  `PUT`
+  
+
+*  **Data Params**
+
+   **Required:**
+   Danh sách các category id (có thể nhận giá trị rỗng)
+       
+       [
+          {
+              "id": {category_id}
+          },
+          {
+              "id": {category_id}
+          }
+       ]
+       
+   
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    
+        {
+            "result":
+            [
+                {
+                    "name":"Truyện ma",
+                    "id":1
+                },
+                {
+                    "name":"Truyện cười",
+                    "id":2
+                }
+            ],
+            "message":"OK",
+            "status":200
+        }
+        
+       OR
+       
+        {
+            "message":"Delete all category of this book successful",
+            "status":200
+        }
+ 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** 
+    
+        {
+            "status": 400,
+            "message": "Category not found: 70"
+        }
+    
+      OR
+    
+        {
+            "status": 400,
+            "message": "Can't insert this category for this book"
+        }
+        
+
+* **Sample Call:**
+
+   `PUT` /book/1/category
+   
+        [
+            {
+                "id": 4
+            },
+            {
+                "id": 5
+            }
+        ]
+
+### 9. Delete all category of specified book
 
   Xóa tất cả các thể loại của một truyện cụ thể
 
@@ -531,7 +622,7 @@ Mô tả hệ thống
 
    `DELETE` /book/1/category <br />
    
-### 9. Delete a category of specified book
+### 10. Delete a category of specified book
 
   Xóa một thể loại của một truyện cụ thể
 

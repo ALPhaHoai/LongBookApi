@@ -6,6 +6,7 @@ import com.longbook.dao.CategoryDao;
 import com.longbook.model.*;
 import com.mysql.cj.util.StringUtils;
 import lib.MyLib;
+import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import net.minidev.json.parser.JSONParser;
 
@@ -146,11 +147,53 @@ public class BookService {
         } else {
             Category category = getCategoryfromInput(inputData);
             if (category == null) return echoErrorMessage(INVALID_INPUT_DATA, Response.Status.BAD_REQUEST);
-            else if (CategoryDao.get(category.getId()) == null) return echoErrorMessage(CategoryService.NOT_FOUND, Response.Status.NOT_FOUND);
+            else if (CategoryDao.get(category.getId()) == null)
+                return echoErrorMessage(CategoryService.NOT_FOUND, Response.Status.NOT_FOUND);
             else if (BookDao.ishasCategory(book, category.getId())) return echoErrorMessage(ALREADY_HAS_CATEGORY);
             else {
                 BookCategory bookCategory = BookDao.insertCategory(book.getId(), category.getId());
                 return bookCategory == null ? echoErrorMessage(CANNOT_INSERT_CATEGORY) : echoSuccessMessage(INSERT_CATEGORY_SUCCESSFUL);
+            }
+        }
+    }
+
+    @PUT
+    @Path("/{book_id}/category")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateCategory(@PathParam("book_id") String bookId, String inputData) {
+        Book book = BookDao.get(bookId);
+        if (book == null) {
+            return echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND);
+        } else {
+            if ("".equals(inputData)) {//Delete all category ò this book
+                if (BookDao.deleteAllCategory(book)) return echoSuccessMessage(DELETE_ALL_CATEGORY_SUCCESSFUL);
+                else return echoErrorMessage(CANNOT_DELETE_ALL_CATEGORY);
+            } else {
+                Categories categories = getCategoriesfromInput(inputData);
+                if (categories == null) return echoErrorMessage(INVALID_INPUT_DATA, Response.Status.BAD_REQUEST);
+                for (Category category : categories) {
+                    if (CategoryDao.get(category.getId()) == null)
+                        return echoErrorMessage(CategoryService.NOT_FOUND + ": " + category.getId(), Response.Status.NOT_FOUND);
+                }
+
+                Categories allCateofBook = CategoryDao.getAllhasBook(bookId, "0", "100");
+
+                //Insert cate, những thể loại mới mà sẽ được insert
+                Categories insertCate = (allCateofBook == null) ? categories : allCateofBook.sub(categories);
+
+                if (insertCate != null && !BookCategoryDao.insert(insertCate.toBookCategories(bookId)))
+                    echoErrorMessage("Can't insert new cate");
+
+                //Delete cate, những thể loại sẽ bị xóa
+                Categories delteCate = (allCateofBook != null) ? categories.sub(allCateofBook) : null;
+
+                if (delteCate != null && !BookCategoryDao.delete(delteCate.toBookCategories(bookId)))
+                    echoErrorMessage("Can't delete old cate");
+
+                Categories allCate = CategoryDao.getAllhasBook(bookId, "0", "100");
+                return allCate == null ?
+                        ((delteCate == null || delteCate.size() == 0) ? echoSuccessMessage("Done") : echoErrorMessage(CANNOT_INSERT_CATEGORY))
+                        : echoSuccessMessage(allCate.toJSON());
             }
         }
     }
@@ -196,6 +239,24 @@ public class BookService {
             if (StringUtils.isStrictlyNumeric(categoryId) && Integer.valueOf(categoryId) > 0) {
                 return new Category(categoryId);
             } else return null;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    private static Categories getCategoriesfromInput(String inputData) {
+        try {
+            JSONArray jSONArray = (JSONArray) (new JSONParser(JSONParser.DEFAULT_PERMISSIVE_MODE)).parse(inputData);
+            if (jSONArray == null || jSONArray.size() == 0) return null;
+            Categories categories = new Categories();
+            for (int i = 0; i < jSONArray.size(); i++) {
+                JSONObject jsonObject = (JSONObject) jSONArray.get(i);
+                String categoryId = jsonObject.getAsString("id");
+                if (StringUtils.isStrictlyNumeric(categoryId) && Integer.valueOf(categoryId) > 0) {
+                    categories.add(new Category(categoryId));
+                }
+            }
+            return categories.size() == 0 ? null : categories;
         } catch (Exception ex) {
             return null;
         }

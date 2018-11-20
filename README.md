@@ -501,7 +501,7 @@ Mô tả hệ thống
 
 *  **Data Params**
 
-   **Required:**
+   **Optional:**
    Danh sách các category id (có thể nhận giá trị rỗng)
        
        [

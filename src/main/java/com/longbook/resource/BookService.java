@@ -1,4 +1,4 @@
-package com.longbook.service;
+package com.longbook.resource;
 
 import com.longbook.dao.BookCategoryDao;
 import com.longbook.dao.BookDao;
@@ -22,7 +22,7 @@ import static lib.MyLib.echoSuccessMessage;
  * Date: 11/15/2018
  * Time: 10:33 AM
  */
-@Path("/book")
+@Path("book")
 public class BookService {
     //Book Message
     public static final String NOT_FOUND = "Book not found";
@@ -44,6 +44,22 @@ public class BookService {
     public static final String INSERT_CATEGORY_SUCCESSFUL = "Insert this category for this book successful";
     public static final String CANNOT_DELETE_CATEGORY = "Can't delete this category for this book";
     public static final String DELETE_CATEGORY_SUCCESSFUL = "Delete this category of this book successful";
+
+    /**
+     * start: [0 - ~]
+     * limit: [1 - 100]
+     */
+    @GET
+    @Path("/search")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response search(@DefaultValue("0") @QueryParam("start") String start, @DefaultValue("10") @QueryParam("limit") String limit,@DefaultValue("") @QueryParam("title") String title, @DefaultValue("") @QueryParam("content") String content, @DefaultValue("") @QueryParam("categories") String categories) {
+        String validResult = MyLib.isValidPaginationInput(start, limit);
+        if (!"OK".equals(validResult))
+            return Response.status(Response.Status.BAD_REQUEST).entity(echoErrorMessage(validResult)).build();
+        categories = categories.replaceAll("\\s+", "");//Remove all space
+        Books result = BookDao.search(title, content, ("".equals(categories)) ? null : categories.split(","), start, limit);
+        return (result == null) ? echoErrorMessage(EMPTY_DATA) : echoSuccessMessage(result.toJSON());
+    }
 
     /**
      * start: [0 - ~]
@@ -86,7 +102,7 @@ public class BookService {
 
 
     @DELETE
-    @Path("/{book_id}")
+    @Path("{book_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);
@@ -99,7 +115,7 @@ public class BookService {
     }
 
     @PUT
-    @Path("/{book_id}")
+    @Path("{book_id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response update(@PathParam("book_id") String bookId, Book book) {
@@ -122,7 +138,7 @@ public class BookService {
     }
 
     @GET
-    @Path("/{book_id}/category")
+    @Path("{book_id}/category")
     @Produces(MediaType.APPLICATION_JSON)
     public Response delete(@PathParam("book_id") String bookId, @DefaultValue("0") @QueryParam("start") String start, @DefaultValue("10") @QueryParam("limit") String limit) {
         String validResult = MyLib.isValidPaginationInput(start, limit);
@@ -138,7 +154,7 @@ public class BookService {
     }
 
     @POST
-    @Path("/{book_id}/category")
+    @Path("{book_id}/category")
     @Produces(MediaType.APPLICATION_JSON)
     public Response addCategory(@PathParam("book_id") String bookId, String inputData) {
         Book book = BookDao.get(bookId);
@@ -158,7 +174,7 @@ public class BookService {
     }
 
     @PUT
-    @Path("/{book_id}/category")
+    @Path("{book_id}/category")
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateCategory(@PathParam("book_id") String bookId, String inputData) {
         Book book = BookDao.get(bookId);
@@ -199,7 +215,7 @@ public class BookService {
     }
 
     @DELETE
-    @Path("/{book_id}/category/{category_id}")
+    @Path("{book_id}/category/{category_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteCategory(@PathParam("book_id") String bookId, @PathParam("category_id") String categoryId) {
         Book book = BookDao.get(bookId);
@@ -218,7 +234,7 @@ public class BookService {
     }
 
     @DELETE
-    @Path("/{book_id}/category")
+    @Path("{book_id}/category")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deleteAllCategory(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);

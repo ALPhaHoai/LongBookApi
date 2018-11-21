@@ -1,4 +1,4 @@
-package com.longbook.service;
+package com.longbook.resource;
 
 import com.longbook.dao.BookDao;
 import com.longbook.dao.CategoryDao;

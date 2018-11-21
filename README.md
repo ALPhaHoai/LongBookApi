@@ -670,6 +670,80 @@ Mô tả hệ thống
 
    `DELETE` /book/1/category/2 <br />
    
+### 11. Search book
+
+  Tìm kiếm truyện theo tên, nội dung hoặc thể loại
+
+* **URL**
+
+  /book/search
+
+* **Authentication**
+
+  `No`
+
+* **Method:**
+  
+  `GET`
+*  **URL Params**
+
+   **Optional:**
+ 
+   `title = {tên truyện}`
+   
+   `content = {nội dung truyện}`
+   
+   `categories = {thể loại 1},{thể loại 2},{thể loại 3}`
+   
+   `start=[0-~] unsigned integer default:0`
+   
+   `limit=[1-100] unsigned integer default:10`
+      
+* **Success Response:**
+  
+  * **Code:** 200 <br />
+    **Content:** 
+    
+        {
+            "result":
+            [
+                {
+                    "id":1,
+                    "title":"Tên truyện 1",
+                    "content":"Nội dung truyện 1"
+                },
+                {
+                    "id":2,
+                    "title":"Tên truyện 2",
+                    "content":"Nội dung truyện 3"
+                }
+            ],
+            "message":"OK",
+            "status":200
+        }
+ 
+* **Error Response:**
+
+  * **Code:** 400 Bad Request <br />
+    **Content:** 
+    
+        {
+            "status": 400,
+            "message": "Empty data"
+        }
+    
+      OR
+    
+        {
+            "status": 400,
+            "message": "Invalid input data"
+        }
+        
+
+* **Sample Call:**
+
+   `GET` /book/search?title=truyen&content=noidung&categories=1,2,3
+   
       
 ## 2. Category Node
 

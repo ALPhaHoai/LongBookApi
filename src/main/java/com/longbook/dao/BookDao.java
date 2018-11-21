@@ -133,6 +133,34 @@ public class BookDao {
      * start: [0 - ~]
      * limit: [1 - 100]
      */
+    public static Books search(String title, String content, String[] categories, String start, String limit) {
+        String condition = "1";
+        String table = "book";
+        if (title != null && !"".equals(title)) condition += " AND book.title like '%" + DB.validSql(title) + "%'";
+        if (content != null && !"".equals(content)) condition += " AND book.content like '%" + DB.validSql(content) + "%'";
+        if (categories != null && categories.length > 0) {
+            table += ", book_category";
+            condition += " AND book.id = book_category.book_id";
+            for (String category : categories) {
+                condition += " AND book_category.category_id = '" + category + "'";
+            }
+
+        }
+
+        if (db.select("book.id, book.title, book.content", table, condition + " ORDER BY book.id ASC LIMIT " + start + "," + limit)) {
+            Books result = new Books();
+            for (ArrayList<String> record : db.getResult()) {
+                result.add(getfromResult(record));
+            }
+            return result;
+        }
+        return null;
+    }
+
+    /**
+     * start: [0 - ~]
+     * limit: [1 - 100]
+     */
     public static Books getAllhasCategory(String categoryId, String start, String limit) {
         if (!StringUtils.isStrictlyNumeric(categoryId) || Integer.valueOf(categoryId) < 0
                 || !StringUtils.isStrictlyNumeric(start) || Integer.valueOf(start) < 0

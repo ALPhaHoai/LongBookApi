@@ -106,30 +106,34 @@ public class BookCategoryDao {
 
     /*
      * insert a list of BookCategory
-     * if one of them fail: remove successfull record and return false
-     * else return true
      * */
     public static boolean insert(BookCategories bookcategoryList) {
         if (bookcategoryList != null && bookcategoryList.size() > 0) {
-            BookCategories bookcategorySuccessList = new BookCategories();
-            for (BookCategory bookcategory : bookcategoryList) {
-                if (insert(bookcategory) != null) {
-                    bookcategorySuccessList.add(bookcategory);
-                } else {
-                    if (bookcategorySuccessList.size() > 0)
-                        for (BookCategory bookcategorySuccess : bookcategorySuccessList) {
-                            delete(bookcategorySuccess);
-                        }
-                    return false;
-                }
+            String sql = "INSERT INTO book_category (book_id, category_id) VALUES ";
+            for (int i = 0; i < bookcategoryList.size(); i++) {
+                sql += "('" + bookcategoryList.get(i).getBookId() + "','" + bookcategoryList.get(i).getCategoryId() + "')";
+                if (i < bookcategoryList.size() - 1) sql += ", ";
             }
-            return true;
+            return db.execute(sql);
+        } else return true;
+    }
+    /*
+     * delete a list of BookCategory
+     * */
+    public static boolean delete(BookCategories bookcategoryList) {
+        if (bookcategoryList != null && bookcategoryList.size() > 0) {
+            String sql = "DELETE FROM book_category WHERE ";
+            for (int i = 0; i < bookcategoryList.size(); i++) {
+                sql += "(book_id = '" + bookcategoryList.get(i).getBookId() + "' AND category_id = '" + bookcategoryList.get(i).getCategoryId() + "')";
+                if (i < bookcategoryList.size() - 1) sql += " OR";
+            }
+            return db.execute(sql);
         } else return true;
     }
 
 
     public static BookCategory update(BookCategory book) {
-        if (get(book.getId()) != null && getNotId(book.getId(), book.getBookId(), book.getCategoryId()) == null){
+        if (get(book.getId()) != null && getNotId(book.getId(), book.getBookId(), book.getCategoryId()) == null) {
             if (db.update("book_category", new String[]{"book_id", "category_id"}, new String[]{book.getBookId(), book.getCategoryId()}, "id = " + book.getId())) {
                 return get(book.getId());
             } else return null;

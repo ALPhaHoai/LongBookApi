@@ -81,6 +81,11 @@ public class BookService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get(@PathParam("book_id") String bookId) {
         Book book = BookDao.get(bookId);
+        if(book != null){
+            Categories cate = CategoryDao.getAllhasBook(bookId, "0", "100");
+            book.setCategories(cate);
+        }
+
         return (book == null) ? echoErrorMessage(NOT_FOUND, Response.Status.NOT_FOUND) : echoSuccessMessage(book.toJSON());
     }
 

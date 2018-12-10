@@ -7,7 +7,7 @@ Chức năng
   - Người dùng
     + Xem danh sách truyện
 	+ Xem chi tiết nội dung từng truyện
-	+ Duyệt danh sách truyện theo thể loại
+	+ Tìm kiếm truyện theo tên
 	
 Mô tả hệ thống
 1. Backend

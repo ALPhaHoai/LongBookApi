@@ -126,7 +126,18 @@ Mô tả hệ thống
             {
                 "id": 10,
                 "title": "Tên truyện",
-                "content": "Nội dung truyện"
+                "content": "Nội dung truyện",
+                "category":
+                [
+                    {
+                        "name": "Ngôn Tình",
+                        "id": 1
+                    },
+                    {
+                        "name": "Truyện cười",
+                        "id": 2
+                    },
+                ],
             },
             "message": "OK",
             "status": 200

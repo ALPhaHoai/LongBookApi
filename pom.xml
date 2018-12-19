@@ -22,6 +22,7 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
@@ -64,6 +65,16 @@
             <groupId>net.minidev</groupId>
             <artifactId>json-smart</artifactId>
             <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
         </dependency>
 
     </dependencies>

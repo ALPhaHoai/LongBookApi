@@ -13,7 +13,7 @@ public class DB {
     private String HOST = "localhost"; //host
     private String PORT = "3306"; //cổng
     private String USER = "root"; // username
-    private String PASSWORD = "mysql"; //Mật khẩu
+    private String PASSWORD = "son_long_2018@"; //Mật khẩu
     private String DB_URL;
 
     private Statement state = null; //Statement ~ một câu lệnh SQL
